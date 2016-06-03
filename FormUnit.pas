@@ -13,10 +13,12 @@ type
     CreateTrapezeButton: TButton;
     CreateLogoButton: TButton;
     CreateHubButton: TButton;
+    CreateDiskButton: TButton;
     procedure CreateWrongSketchButtonClick(Sender: TObject);
     procedure CreateTrapezeButtonClick(Sender: TObject);
     procedure CreateLogoButtonClick(Sender: TObject);
     procedure CreateHubButtonClick(Sender: TObject);
+    procedure CreateDiskButtonClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -30,26 +32,34 @@ implementation
 
 {$R *.dfm}
 
-uses CommonProcUnit, ModelingUnit;
+uses CommonProcUnit, ModelingUnit, SldWorks_TLB;
+
+procedure TMainForm.CreateDiskButtonClick(Sender: TObject);
+var
+  MD: IModelDoc2;
+begin
+  MD := StartSWAndSketch;
+  CreateDiskSketch(MD, CreateHubSketch(MD));
+end;
 
 procedure TMainForm.CreateHubButtonClick(Sender: TObject);
 begin
-   CreateHubSketch(StartSWAndSketch);
+  CreateHubSketch(StartSWAndSketch);
 end;
 
 procedure TMainForm.CreateLogoButtonClick(Sender: TObject);
 begin
-//  CreateLogoSketch(StartSWAndSketch);
+  // CreateLogoSketch(StartSWAndSketch);
 end;
 
 procedure TMainForm.CreateTrapezeButtonClick(Sender: TObject);
 begin
- // CreateTrapeezeSketch(StartSWAndSketch);
+  // CreateTrapeezeSketch(StartSWAndSketch);
 end;
 
 procedure TMainForm.CreateWrongSketchButtonClick(Sender: TObject);
 begin
-  //CreateWrongSketch(StartSWAndSketch);
+  // CreateWrongSketch(StartSWAndSketch);
 end;
 
 end.

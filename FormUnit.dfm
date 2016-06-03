@@ -52,4 +52,13 @@ object MainForm: TMainForm
     TabOrder = 3
     OnClick = CreateHubButtonClick
   end
+  object CreateDiskButton: TButton
+    Left = 8
+    Top = 164
+    Width = 233
+    Height = 33
+    Caption = #1055#1086#1089#1090#1088#1086#1080#1090#1100' '#1076#1080#1089#1082
+    TabOrder = 4
+    OnClick = CreateDiskButtonClick
+  end
 end
