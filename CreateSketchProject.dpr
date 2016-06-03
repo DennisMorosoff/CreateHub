@@ -6,7 +6,9 @@ uses
   SldWorks_TLB in 'SldWorks_TLB.pas',
   SwConst_TLB in 'SwConst_TLB.pas',
   CommonProcUnit in 'CommonProcUnit.pas',
-  ModelingUnit in 'ModelingUnit.pas';
+  ConcreteBuilderHub in 'ConcreteBuilderHub.pas',
+  Dimensioning in 'Dimensioning.pas',
+  ConcreteBuilderDisk in 'ConcreteBuilderDisk.pas';
 
 {$R *.res}
 

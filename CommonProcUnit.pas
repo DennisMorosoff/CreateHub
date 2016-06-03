@@ -15,9 +15,12 @@ var
   swPart: IPartDoc; // указатель на документ детали
   swModel: IModelDoc2; // указатель на документ модели
   OptionValue: WordBool; // здесь сохраним текущее значение этой галки
+  hr:HRESULT;
 begin
 
-  swApp := CoSldWorks_.Create; // вызов фабрики класса CoSldWorks_
+  swApp:=CreateOleObject('SldWorks.Application') as ISldWorks;
+  if swApp= nil  then
+      hr:=E_UNEXPECTED; // вызов фабрики класса CoSldWorks_
 
   if not(swApp.Visible) then
     swApp.Visible := True;

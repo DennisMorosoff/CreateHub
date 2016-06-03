@@ -2,8 +2,8 @@ object MainForm: TMainForm
   Left = 0
   Top = 0
   Caption = #1055#1088#1072#1082#1090#1080#1095#1077#1089#1082#1086#1077' '#1079#1072#1076#1072#1085#1080#1077': '#1069#1089#1082#1080#1079
-  ClientHeight = 300
-  ClientWidth = 635
+  ClientHeight = 337
+  ClientWidth = 492
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,52 +13,90 @@ object MainForm: TMainForm
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
-  object CreateWrongSketchButton: TButton
-    Left = 8
-    Top = 8
-    Width = 233
-    Height = 33
-    Caption = #1055#1086#1089#1084#1086#1090#1088#1077#1090#1100' '#1074' '#1095#1077#1084' '#1087#1088#1086#1073#1083#1077#1084#1072' '#1072#1074#1090#1086#1087#1088#1080#1074#1103#1079#1086#1082
-    Enabled = False
-    TabOrder = 0
-    OnClick = CreateWrongSketchButtonClick
-  end
-  object CreateTrapezeButton: TButton
-    Left = 8
-    Top = 47
-    Width = 233
-    Height = 33
-    Caption = #1057#1086#1079#1076#1072#1090#1100' '#1090#1088#1072#1087#1077#1094#1080#1102
-    Enabled = False
-    TabOrder = 1
-    OnClick = CreateTrapezeButtonClick
-  end
-  object CreateLogoButton: TButton
-    Left = 8
-    Top = 86
-    Width = 233
-    Height = 33
-    Caption = #1055#1086#1089#1090#1088#1086#1080#1090#1100' '#1083#1086#1075#1086#1090#1080#1087' '#1041#1052#1042
-    Enabled = False
-    TabOrder = 2
-    OnClick = CreateLogoButtonClick
-  end
   object CreateHubButton: TButton
-    Left = 8
-    Top = 125
-    Width = 233
+    Left = 168
+    Top = 289
+    Width = 193
     Height = 33
     Caption = #1055#1086#1089#1090#1088#1086#1080#1090#1100' '#1089#1090#1091#1087#1080#1094#1091
-    TabOrder = 3
+    TabOrder = 0
     OnClick = CreateHubButtonClick
   end
-  object CreateDiskButton: TButton
-    Left = 8
-    Top = 164
-    Width = 233
-    Height = 33
-    Caption = #1055#1086#1089#1090#1088#1086#1080#1090#1100' '#1076#1080#1089#1082
+  object LabeledEditDiamVal: TLabeledEdit
+    Left = 168
+    Top = 24
+    Width = 193
+    Height = 21
+    EditLabel.Width = 126
+    EditLabel.Height = 13
+    EditLabel.Caption = #1042#1074#1077#1076#1080#1090#1077' '#1076#1080#1084#1077#1090#1088' '#1074#1072#1083#1072' Dv'
+    TabOrder = 1
+    Text = '60'
+  end
+  object LabeledEditLst: TLabeledEdit
+    Left = 168
+    Top = 62
+    Width = 193
+    Height = 21
+    EditLabel.Width = 140
+    EditLabel.Height = 13
+    EditLabel.Caption = #1042#1074#1077#1076#1080#1090#1077' '#1076#1083#1080#1085#1091' '#1089#1090#1091#1087#1080#1094#1099' Lst'
+    TabOrder = 2
+    Text = '72'
+  end
+  object LabeledEditDiamSt: TLabeledEdit
+    Left = 168
+    Top = 102
+    Width = 193
+    Height = 21
+    EditLabel.Width = 154
+    EditLabel.Height = 13
+    EditLabel.Caption = #1042#1074#1077#1076#1080#1090#1077' '#1076#1080#1072#1084#1077#1090#1088' '#1089#1090#1091#1087#1080#1094#1099' Dst'
+    TabOrder = 3
+    Text = '96'
+  end
+  object LabeledEditLvist: TLabeledEdit
+    Left = 168
+    Top = 142
+    Width = 193
+    Height = 21
+    EditLabel.Width = 155
+    EditLabel.Height = 13
+    EditLabel.Caption = #1042#1074#1077#1076#1080#1090#1077' '#1096#1080#1088#1080#1085#1091' '#1074#1099#1089#1090#1091#1087#1072' Lvist'
     TabOrder = 4
-    OnClick = CreateDiskButtonClick
+    Text = '12'
+  end
+  object LabeledEditCrownWidth: TLabeledEdit
+    Left = 168
+    Top = 182
+    Width = 193
+    Height = 21
+    EditLabel.Width = 126
+    EditLabel.Height = 13
+    EditLabel.Caption = #1042#1074#1077#1076#1080#1090#1077' '#1096#1080#1088#1080#1085#1091' '#1074#1077#1085#1094#1072' B'
+    TabOrder = 5
+    Text = '85'
+  end
+  object LabeledEditDiamA: TLabeledEdit
+    Left = 168
+    Top = 222
+    Width = 193
+    Height = 21
+    EditLabel.Width = 184
+    EditLabel.Height = 13
+    EditLabel.Caption = #1042#1074#1077#1076#1080#1090#1077' '#1076#1080#1072#1084#1077#1090#1088' '#1074#1077#1088#1096#1080#1085' '#1079#1091#1073#1100#1077#1074' Da'
+    TabOrder = 6
+    Text = '120'
+  end
+  object LabeledEditCrownHeigth: TLabeledEdit
+    Left = 168
+    Top = 262
+    Width = 193
+    Height = 21
+    EditLabel.Width = 183
+    EditLabel.Height = 13
+    EditLabel.Caption = #1042#1074#1077#1076#1080#1090#1077' '#1074#1099#1089#1086#1090#1091' '#1079#1091#1073#1095#1072#1090#1086#1075#1086' '#1074#1077#1085#1094#1072' S '
+    TabOrder = 7
+    Text = '13'
   end
 end
