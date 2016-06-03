@@ -106,6 +106,7 @@ ssDa:Extended;
 begin
   ssDa:=StrToFloat(ParStr);
   ssDa:=ssDa/1000;
+  Result:=ssDa;
 end;
 
 function Da :Extended;
@@ -119,6 +120,7 @@ var
 begin
  ssB:=StrToFloat(ParStr);
  ssB:=ssB/1000;
+ Result:=ssB;
 end;
 
 function B :Extended;
@@ -132,6 +134,7 @@ var
 begin
   ssS:=StrToFloat(ParStr);
   ssS:=ssS/1000;
+  Result:=ssS;
 end;
 
 function S :Extended;

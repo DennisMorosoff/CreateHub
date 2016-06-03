@@ -64,9 +64,8 @@ begin
   // После того, как эскиз полностью построен можно
   // вернуть настройку авто-привязок как было до нашего вмешательства
 
-  Result.FrontPoint := SecondPoint;
-  Result.BackwardPoint := FirstPoint;
-
+  Result.FrontPoint := FirstPoint;
+  Result.BackwardPoint := SecondPoint;
 end;
 
 

@@ -38,20 +38,24 @@ implementation
 
 {$R *.dfm}
 
-uses CommonProcUnit, ConcreteBuilderHub, ConcreteBuilderDisk;
+uses CommonProcUnit, ConcreteBuilderHub, ConcreteBuilderDisk, SldWorks_TLB;
 
 procedure TMainForm.CreateHubButtonClick(Sender: TObject);
+var
+MD: IModelDoc2;
 begin
  DiamVal:=LabeledEditDiamVal.Text;
  HubWidth:=LabeledEditLst.Text;
  DiamHub:= LabeledEditDiamSt.Text ;
  WidthVist:= LabeledEditLvist.Text;
- DiamA:=LabeledEditDiamA;
- CrownHeigth:=LabeledEditCrownHeigth;
- CrownWidth:=LabeledEditCrownWidth;
+ DiamA:=LabeledEditDiamA.Text;
+ CrownHeigth:=LabeledEditCrownHeigth.Text;
+ CrownWidth:=LabeledEditCrownWidth.Text;
+
+ MD:=StartSWAndSketch;
 
    CreateHubSketch(StartSWAndSketch);
-   CreateDiskSketch(StartSWAndSketch);
+   CreateDiskSketch(MD);
 end;
 
 end.
