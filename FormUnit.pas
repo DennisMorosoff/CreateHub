@@ -38,7 +38,8 @@ implementation
 
 {$R *.dfm}
 
-uses CommonProcUnit, ConcreteBuilderHub, ConcreteBuilderDisk, SldWorks_TLB;
+uses CommonProcUnit, ConcreteBuilderHub, ConcreteBuilderDisk, SldWorks_TLB,
+  ConcreteBuilderCrown;
 
 procedure TMainForm.CreateHubButtonClick(Sender: TObject);
 var
@@ -54,8 +55,9 @@ begin
 
  MD:=StartSWAndSketch;
 
-   CreateHubSketch(StartSWAndSketch);
+   CreateHubSketch(MD);
    CreateDiskSketch(MD);
+   CreateCrownSketch(MD);
 end;
 
 end.

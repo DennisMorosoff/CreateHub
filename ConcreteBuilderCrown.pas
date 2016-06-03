@@ -1,4 +1,4 @@
-unit ConcreteBuilderHub;
+unit ConcreteBuilderCrown;
 
 interface
 
@@ -10,12 +10,11 @@ type
   end;
 
 
-
-function CreateHubSketch(Model: IModelDoc2): TTwoSketchPoints;
+function CreateCrownSketch(Model: IModelDoc2): TTwoSketchPoints;
 
 implementation
 
-function CreateHubSketch(Model: IModelDoc2): TTwoSketchPoints;
+function CreateCrownSketch(Model: IModelDoc2): TTwoSketchPoints;
 var
   mdSketchMgr: ISketchManager;
   mdSeg: array [0 .. 5] of ISketchSegment;
@@ -24,8 +23,10 @@ var
   RefPoint:ISketchPoint;
   FirstPoint: ISketchPoint;
   SecondPoint: ISketchPoint;
+  delta:Extended;
 begin
 
+delta:=(B-Lst)/2;
 
   mdSketchMgr := Model.SketchManager;
   // Получаем указатель на менеджер эскиза
@@ -40,19 +41,19 @@ begin
   Model.SetInferenceMode(False);
   // Отключаем авто-привязки
 
-  mdSeg[0] := mdSketchMgr.CreateLine(Lvist+C,Dst/2,0,Lst,Dst/2,0);
+  mdSeg[0] := mdSketchMgr.CreateLine(Lvist,Da-S,0,0-delta,Da-S,0);
   Model.SketchAddConstraints('sgHORIZONTAL2D');
 
-  mdSeg[1] := mdSketchMgr.CreateLine(Lst,Dst/2,0,Lst,Dv/2,0);
+  mdSeg[1] := mdSketchMgr.CreateLine(0-delta,Da-S,0,0-delta,Da,0);
   Model.SketchAddConstraints('sgVERTICAL2D');
 
-  mdSeg[2] := mdSketchMgr.CreateLine(Lst,Dv/2,0,0,Dv/2,0);
+  mdSeg[2] := mdSketchMgr.CreateLine(0-delta,Da,0,0-delta+B,Da,0);
   Model.SketchAddConstraints('sgHORIZONTAL2D');
 
-  mdSeg[3] := mdSketchMgr.CreateLine(0,Dv/2,0,0,Dst/2,0);
+  mdSeg[3] := mdSketchMgr.CreateLine(0-delta+B,Da,0,0-delta+B,Da-S,0);
   Model.SketchAddConstraints('sgVERTICAL2D');
 
-  mdSeg[4] := mdSketchMgr.CreateLine(0,Dst/2,0,Lvist,Dst/2,0);
+  mdSeg[4] := mdSketchMgr.CreateLine(0-delta+B,Da-S,0,Lvist+C,Da-S,0);
   Model.SketchAddConstraints('sgHORIZONTAL2D');
 
   FirstPoint := ISketchLine(mdSeg[0]).IGetStartPoint2;
@@ -66,6 +67,7 @@ begin
   Result.FrontPoint := FirstPoint;
   Result.BackwardPoint := SecondPoint;
 end;
+
 
 
 end.

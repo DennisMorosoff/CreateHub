@@ -8,7 +8,8 @@ uses
   CommonProcUnit in 'CommonProcUnit.pas',
   ConcreteBuilderHub in 'ConcreteBuilderHub.pas',
   Dimensioning in 'Dimensioning.pas',
-  ConcreteBuilderDisk in 'ConcreteBuilderDisk.pas';
+  ConcreteBuilderDisk in 'ConcreteBuilderDisk.pas',
+  ConcreteBuilderCrown in 'ConcreteBuilderCrown.pas';
 
 {$R *.res}
 
