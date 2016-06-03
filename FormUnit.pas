@@ -12,9 +12,11 @@ type
     CreateWrongSketchButton: TButton;
     CreateTrapezeButton: TButton;
     CreateLogoButton: TButton;
+    CreateHubButton: TButton;
     procedure CreateWrongSketchButtonClick(Sender: TObject);
     procedure CreateTrapezeButtonClick(Sender: TObject);
     procedure CreateLogoButtonClick(Sender: TObject);
+    procedure CreateHubButtonClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -30,19 +32,24 @@ implementation
 
 uses CommonProcUnit, ModelingUnit;
 
+procedure TMainForm.CreateHubButtonClick(Sender: TObject);
+begin
+   CreateHubSketch(StartSWAndSketch);
+end;
+
 procedure TMainForm.CreateLogoButtonClick(Sender: TObject);
 begin
-  CreateLogoSketch(StartSWAndSketch);
+//  CreateLogoSketch(StartSWAndSketch);
 end;
 
 procedure TMainForm.CreateTrapezeButtonClick(Sender: TObject);
 begin
-  CreateTrapeezeSketch(StartSWAndSketch);
+ // CreateTrapeezeSketch(StartSWAndSketch);
 end;
 
 procedure TMainForm.CreateWrongSketchButtonClick(Sender: TObject);
 begin
-  CreateWrongSketch(StartSWAndSketch);
+  //CreateWrongSketch(StartSWAndSketch);
 end;
 
 end.

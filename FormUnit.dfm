@@ -19,6 +19,7 @@ object MainForm: TMainForm
     Width = 233
     Height = 33
     Caption = #1055#1086#1089#1084#1086#1090#1088#1077#1090#1100' '#1074' '#1095#1077#1084' '#1087#1088#1086#1073#1083#1077#1084#1072' '#1072#1074#1090#1086#1087#1088#1080#1074#1103#1079#1086#1082
+    Enabled = False
     TabOrder = 0
     OnClick = CreateWrongSketchButtonClick
   end
@@ -28,6 +29,7 @@ object MainForm: TMainForm
     Width = 233
     Height = 33
     Caption = #1057#1086#1079#1076#1072#1090#1100' '#1090#1088#1072#1087#1077#1094#1080#1102
+    Enabled = False
     TabOrder = 1
     OnClick = CreateTrapezeButtonClick
   end
@@ -37,7 +39,17 @@ object MainForm: TMainForm
     Width = 233
     Height = 33
     Caption = #1055#1086#1089#1090#1088#1086#1080#1090#1100' '#1083#1086#1075#1086#1090#1080#1087' '#1041#1052#1042
+    Enabled = False
     TabOrder = 2
     OnClick = CreateLogoButtonClick
+  end
+  object CreateHubButton: TButton
+    Left = 8
+    Top = 125
+    Width = 233
+    Height = 33
+    Caption = #1055#1086#1089#1090#1088#1086#1080#1090#1100' '#1089#1090#1091#1087#1080#1094#1091
+    TabOrder = 3
+    OnClick = CreateHubButtonClick
   end
 end
