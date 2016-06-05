@@ -24,7 +24,8 @@ function BIn(ParStr:String):Extended;
 function B :Extended;
 function SIn(ParStr:String):Extended;
 function S :Extended;
-function C:Extended;
+function CIn(ParStr:String):Extended;
+function C :Extended;
 
 
 implementation
@@ -89,15 +90,19 @@ begin
   Result:=LvistIn(WidthVist);
 end;
 
-function C:Extended;
+function CIn(ParStr:String):Extended;
 // Функция для расчета ширины диска колеса
 Var
-ssC,ssLst,ssLvist:Extended;
+ssC:Extended;
 begin
-ssLst:=LstIn(HubWidth);
-ssLvist:=LvistIn(WidthVist);
- ssC:=ssLst-2*ssLvist;
+ ssC:=StrToFloat(ParStr);
+ ssC:=ssC/1000;
  Result:=ssC;
+end;
+
+function C:Extended;
+begin
+  Result:=CIn(DiskWidth);
 end;
 
 function DaIn(ParStr:String):Extended;

@@ -17,6 +17,9 @@ type
     LabeledEditCrownWidth: TLabeledEdit;
     LabeledEditDiamA: TLabeledEdit;
     LabeledEditCrownHeigth: TLabeledEdit;
+    LabeledEditDiskWidth: TLabeledEdit;
+    ComboBox1: TComboBox;
+    Label1: TLabel;
     procedure CreateHubButtonClick(Sender: TObject);
   private
     { Private declarations }
@@ -32,7 +35,8 @@ var
   WidthVist,
   DiamA,
   CrownHeigth,
-  CrownWidth:String;
+  CrownWidth,
+  DiskWidth:String;
 
 implementation
 
@@ -52,12 +56,50 @@ begin
  DiamA:=LabeledEditDiamA.Text;
  CrownHeigth:=LabeledEditCrownHeigth.Text;
  CrownWidth:=LabeledEditCrownWidth.Text;
+ DiskWidth:=LabeledEditDiskWidth.Text;
 
  MD:=StartSWAndSketch;
 
-   CreateHubSketch(MD);
-   CreateDiskSketch(MD);
-   CreateCrownSketch(MD);
+ case ComboBox1.ItemIndex of
+ 0:
+ // Прокат 
+ begin
+   CreateHubSketchHire(MD);
+   CreateDiskSketch(MD,
+                    CreateHubSketchHire(MD).FrontPoint,
+                    CreateHubSketchHire(MD).BackwardPoint,
+                    CreateCrownSketchHire(MD).FrontPoint,
+                    CreateCrownSketchHire(MD).BackwardPoint);
+   CreateCrownSketchHire(MD);
+  end;
+ 1:
+ // Поковка
+ begin
+   CreateHubSketchForging(MD);
+   
+   CreateDiskSketch(MD, 
+                    CreateHubSketchForging(MD).FrontPoint,
+                    CreateHubSketchForging(MD).BackwardPoint,
+                    CreateCrownSketchForging(MD).FrontPoint,
+                    CreateCrownSketchForging(MD).BackwardPoint);
+                    
+   CreateCrownSketchForging(MD);
+  end;
+ 2:
+ // Штамповка
+ begin
+ CreateHubSketchStamping(MD);
+ 
+ CreateDiskSketch(MD,
+                  CreateHubSketchStamping(MD).FrontPoint,
+                  CreateHubSketchStamping(MD).BackwardPoint,
+                  CreateCrownSketchStamping(MD).FrontPoint,
+                  CreateCrownSketchStamping(MD).BackwardPoint);
+                  
+ CreateCrownSketchStamping(MD);  
+ end;
+ end;
+
 end;
 
 end.
